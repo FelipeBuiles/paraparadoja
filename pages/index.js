@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 
 class Index extends Component {
 
@@ -34,7 +34,7 @@ class Index extends Component {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
     return (
-      <div>
+      <Fragment>
         <div className="container">
           <h1 id="head">¡Todavía no!</h1>
           <h2 id="sub">¿Por qué lo abriste?</h2>
@@ -56,8 +56,22 @@ class Index extends Component {
             </li>
           </ul>
         </div>
-        <style jsx>{`
+        <style jsx global>{`
         @import url('https://fonts.googleapis.com/css?family=Lobster|Nanum+Gothic+Coding');
+        body {
+          margin: 0;
+        }
+        .container {
+          background-color: #0074D9;
+          color: white;
+          position: absolute;
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
         ul.countdown {
           list-style: none;
           margin: 75px 0;
@@ -89,7 +103,7 @@ class Index extends Component {
           font-family: 'Nanum Gothic Coding', monospace;
         }
         `}</style>
-      </div>
+      </Fragment>
     )
   }
 }
